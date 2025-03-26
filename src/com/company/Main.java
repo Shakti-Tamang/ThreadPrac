@@ -8,5 +8,12 @@ public class Main {
         Thraed1 t1=new Thraed1();
         t1.start();
 
+
+
+        ThreadRunnable threadRunnable=new ThreadRunnable();
+        Thread thread=new Thread(threadRunnable);
+        thread.start();
+
+
     }
 }
