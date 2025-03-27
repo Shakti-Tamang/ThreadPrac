@@ -4,7 +4,7 @@ import org.w3c.dom.ls.LSOutput;
 
 public class AsyncThreadPrac {
 
-    private static int counter;
+     static int counter;
 
 
 
@@ -15,7 +15,7 @@ public class AsyncThreadPrac {
 //
 //    On the other hand, simple threads (without synchronization) may allow multiple threads to access shared
 //    data simultaneously, which can lead to issues like data inconsistency or corruption.
-    public synchronized void save(){
+    public synchronized void Increment(){
         System.out.println("The thraed name"+Thread.currentThread().getName());
         counter ++;
         try {
@@ -24,5 +24,7 @@ public class AsyncThreadPrac {
         catch(InterruptedException ex){
             System.out.println(ex);
         }
+
+        System.out.println(Thread.currentThread().getName()+"\t"+"the count :"+"\t"+counter);
     }
 }
