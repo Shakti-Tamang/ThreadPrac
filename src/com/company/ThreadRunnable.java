@@ -1,6 +1,8 @@
 package com.company;
 
 public class ThreadRunnable implements Runnable {
+
+
 Thread thread;
 String name;
     ThreadRunnable(String name){
