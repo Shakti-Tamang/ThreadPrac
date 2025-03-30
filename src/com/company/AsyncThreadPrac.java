@@ -6,6 +6,11 @@ public class AsyncThreadPrac {
 
      static int counter;
 
+//     say it in simple way
+
+//    Remember: Synchronization is about coordinating access to shared state between threads, not about
+//    making operations synchronous (though it has that side effect). For true asynchronous operations,
+//    look at Java's CompletableFuture or the java.util.concurrent package.
 
 
 //    In Java, synchronization is used to control access to shared resources in a multi-threaded

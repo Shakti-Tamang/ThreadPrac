@@ -24,7 +24,18 @@ public class Main {
 //        Preventing Premature Program Exit: If the main thread finishes executing before the child threads, the child threads may not have finished their tasks, leading to incomplete results.
 //
 //                Coordinating Concurrent Tasks: join() allows you to coordinate the termination of multiple threads in a way that ensures proper sequencing of tasks.
+//
+//        The join() method is used to make the main thread (or any other thread) wait until the threads it is waiting for have finished their execution. Essentially, it ensures that the main thread does not proceed until all child threads have completed their tasks.
+//
+//        How join() Works:
+//        When you call join() on a thread, the calling thread (in this case, the main thread) will pause and wait for the thread on which join() was called to finish executing.
+//
+//                The main thread is calling join() on each of the 5 threads, which ensures that the main thread will only print the final value of the counter after all the threads have finished their work.
+
+
         for(int i=0;i<thread.length;i++){
+
+
             thread[i] =new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -43,6 +54,7 @@ public class Main {
         }
 
         System.out.println("Final counter value: " + AsyncThreadPrac.counter);
+
 
 
 
