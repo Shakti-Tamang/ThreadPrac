@@ -7,6 +7,8 @@ import java.util.List;
 
 public class Main {
 
+//    "/"  forward slash "\" backward slash"
+
     public static void main(String[] args) {
 	// write your code here
 
@@ -33,6 +35,11 @@ public class Main {
 //                The main thread is calling join() on each of the 5 threads, which ensures that the main thread will only print the final value of the counter after all the threads have finished their work.
 
 
+//
+//        Yes, if multiple threads try to access and modify the same shared resource
+//        (variable, file, database record, etc.) without proper synchronization, it can lead to a race
+//    condition.
+
         for(int i=0;i<thread.length;i++){
 
 
@@ -45,6 +52,22 @@ public class Main {
                     "thread"+(i+1));
             thread[i].start();
         }
+
+//        The join() method in Java threads is crucial for coordinating thread execution and
+//        ensuring proper synchronization. Here's why it's used in your code:
+//
+//        Key Reasons for Using join()
+//        Ensures Completion Before Proceeding
+//
+//        Makes the calling thread (usually main) wait until the joined thread finishes execution
+//
+//        Without join(), main might print the counter value before all threads complete
+//
+//        Prevents Race Conditions
+//
+//        In your example, multiple threads are incrementing AsyncThreadPrac.counter
+//
+//        join() guarantees all increments are done before reading the final value
         for (Thread thread1 : thread) {
             try {
                 thread1.join();
